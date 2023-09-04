@@ -77,7 +77,7 @@ plot(
   lty = 1,
   xlab = "time",
   ylab = "value",
-  main = "State Space Model" 
+  main = "State Space Model"
 )
 lines(
   x = dat_univ_p1[, "time"],
