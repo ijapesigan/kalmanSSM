@@ -1,0 +1,59 @@
+---
+title: "kalmanSSM: Kalman Filter"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+bibliography: "vignettes.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+nocite: |
+  @RCoreTeam-2023
+  @Eddelbuettel-Sanderson-2014
+vignette: >
+  %\VignetteIndexEntry{kalmanSSM: Kalman Filter}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/ijapesigan/kalmanSSM/workflows/R-CMD-check/badge.svg)](https://github.com/ijapesigan/kalmanSSM/actions)
+[![test-coverage](https://github.com/ijapesigan/kalmanSSM/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/ijapesigan/kalmanSSM/actions/workflows/test-coverage.yml)
+[![lint](https://github.com/ijapesigan/kalmanSSM/actions/workflows/lint.yml/badge.svg)](https://github.com/ijapesigan/kalmanSSM/actions/workflows/lint.yml)
+[![pkgdown](https://github.com/ijapesigan/kalmanSSM/actions/workflows/pkgdown-gh-pages.yml/badge.svg)](https://github.com/ijapesigan/kalmanSSM/actions/workflows/pkgdown-gh-pages.yml)
+[![codecov](https://codecov.io/gh/ijapesigan/kalmanSSM/branch/main/graph/badge.svg)](https://codecov.io/gh/ijapesigan/kalmanSSM)
+<!-- badges: end -->
+
+## Description
+
+Functions related to Kalman filters using `RcppArmadillo`.
+
+## Installation
+
+You can install the released version of
+`kalmanSSM`
+from
+[GitHub](https://github.com/ijapesigan/kalmanSSM) with:
+
+```r
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("ijapesigan/kalmanSSM")
+```
+
+## More Information
+
+See
+[GitHub Pages](https://ijapesigan.github.io/kalmanSSM)
+for package documentation.
+
+See
+[Quarto Pub](https://ijapesigan.quarto.pub/kalmanSSM)
+for package wiki and other resources.
+
+## References

@@ -1,0 +1,100 @@
+---
+title: "kalmanSSM: Univariate State Space Model Data"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{kalmanSSM: Univariate State Space Model Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-dat-univ-p1-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>"
+)
+```
+
+```{r}
+library(kalmanSSM)
+```
+
+## Model Generating Model
+
+### Measurement Model
+
+\begin{equation}
+  Y
+  =
+  \eta
+  +
+  \varepsilon
+  \quad
+  \text{with}
+  \quad
+  \mathcal{N}
+  \left( 0, 1 \right)
+\end{equation}
+
+### Dynamic Model
+
+\begin{equation}
+  \eta_{t}
+  =
+  0.8
+  \eta_{t - 1}
+  +
+  \zeta_{t}
+  \quad
+  \text{with}
+  \quad
+  \mathcal{N}
+  \left( 0, 1 \right)
+\end{equation}
+
+## Data
+
+```{r}
+knitr::kable(dat_univ_p1)
+```
+
+## Plot
+
+```{r, echo = FALSE}
+plot(
+  x = dat_univ_p1[, "time"],
+  y = dat_univ_p1[, "eta"],
+  type = "b",
+  pch = 19,
+  col = "red",
+  lty = 1,
+  xlab = "time",
+  ylab = "value",
+  main = "State Space Model" 
+)
+lines(
+  x = dat_univ_p1[, "time"],
+  y = dat_univ_p1[, "y"],
+  type = "b",
+  pch = 18,
+  col = "black",
+  lty = 2
+)
+legend(
+  "topright",
+  legend = c(
+    expression(paste("Latent", " (", eta, ")")),
+    expression(paste("Observed", " (", Y, ")"))
+  ),
+  col = c("red", "black"),
+  lty = 1:2,
+  pch = c(19, 18)
+)
+```
