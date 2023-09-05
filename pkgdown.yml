@@ -5,7 +5,7 @@ articles:
   dat_univ_p1: dat_univ_p1.html
   kalmanSSM: kalmanSSM.html
   session: session/session.html
-last_built: 2023-09-04T16:32Z
+last_built: 2023-09-05T01:08Z
 urls:
   reference: https://github.com/ijapesigan/kalmanSSM/reference
   article: https://github.com/ijapesigan/kalmanSSM/articles
