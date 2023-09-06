@@ -26,15 +26,18 @@
 #'     \boldsymbol{\Theta}
 #'     \right)
 #'   }
-#'   where \eqn{\mathbf{y}}, \eqn{\boldsymbol{\eta}},
-#'   and \eqn{\boldsymbol{\varepsilon}}
+#'   where \eqn{\mathbf{y}_{t}}, \eqn{\boldsymbol{\eta}_{t}},
+#'   and \eqn{\boldsymbol{\varepsilon}_{t}}
 #'   are random variables and \eqn{\boldsymbol{\nu}},
 #'   \eqn{\boldsymbol{\Lambda}},
 #'   and \eqn{\boldsymbol{\Theta}} are model parameters.
-#'   \eqn{\mathbf{y}} is a vector of observed random variables,
-#'   \eqn{\boldsymbol{\eta}} is a vector of latent random variables,
-#'   and \eqn{\boldsymbol{\varepsilon}}
+#'   \eqn{\mathbf{y}_{t}} is a vector of observed random variables
+#'   at time \eqn{t},
+#'   \eqn{\boldsymbol{\eta}_{t}} is a vector of latent random variables
+#'   at time \eqn{t},,
+#'   and \eqn{\boldsymbol{\varepsilon}_{t}}
 #'   is a vector of random measurement errors
+#'   at time \eqn{t},
 #'   while \eqn{\boldsymbol{\nu}} is a vector of intercept,
 #'   \eqn{\boldsymbol{\Lambda}} is a matrix of factor loadings,
 #'   and \eqn{\boldsymbol{\Theta}} is the covariance matrix of
@@ -61,7 +64,7 @@
 #'     \boldsymbol{\Psi}
 #'     \right)
 #'   }
-#'   where \eqn{\boldsymbol{\eta}_{t}}, \eqn{\boldsymbol{\eta}_{l}},
+#'   where \eqn{\boldsymbol{\eta}_{t}}, \eqn{\boldsymbol{\eta}_{t - 1}},
 #'   and \eqn{\boldsymbol{\zeta}_{t}} are random variables
 #'   and \eqn{\boldsymbol{\alpha}}, \eqn{\boldsymbol{\beta}},
 #'   and \eqn{\boldsymbol{\Psi}} are model parameters.
@@ -82,11 +85,9 @@
 #' @param Lambda Numeric matrix.
 #'   Measurement or observation matrix.
 #' @param mu0 Numeric matrix.
-#'   Initial state mean vector
-#'   where `p` is the number of lags.
+#'   Initial state mean vector.
 #' @param Sigma0 Numeric matrix.
-#'   Initial state covariance matrix
-#'   where `p` is the number of lags.
+#'   Initial state covariance matrix.
 #' @param beta Numeric matrix.
 #'   State transition matrix.
 #' @param chol_psi Numeric matrix.
