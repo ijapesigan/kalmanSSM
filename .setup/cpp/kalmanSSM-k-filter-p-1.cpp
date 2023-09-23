@@ -189,8 +189,7 @@ Rcpp::List KFilterP1(const arma::mat& data, const arma::mat& Lambda,
 
     // Update step
     innovations.slice(i) = data.row(i).t() - Lambda * eta_predicted.slice(i);
-    eta_filtered.slice(i) =
-        eta_predicted.slice(i) + gain * innovations.slice(i);
+    eta_filtered.slice(i) = eta_predicted.slice(i) + gain * innovations.slice(i);
     eta_cov_filtered.slice(i) =
         eta_cov_predicted.slice(i) - gain * Lambda * eta_cov_predicted.slice(i);
 
